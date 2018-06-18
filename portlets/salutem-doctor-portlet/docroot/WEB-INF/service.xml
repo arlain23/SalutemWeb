@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="salutem.doctor">
+	<author>Aneta Andrzejewska</author>
+	<namespace>doctor</namespace>
+
+	<entity name="Doctor" local-service="true" remote-service="true">
+
+		<column name="doctorId" type="long" primary="true" />
+		<column name="groupId" type="long" />
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<column name="name" type="String" />
+		<column name="surname" type="String" />
+		<column name="imageId" type="long" />
+		<column name="middleName" type="String" />
+		<column name="specialization" type="String" />
+		
+		<!-- Finder methods -->
+        <order by="asc">
+            <order-column name="surname" case-sensitive="false"></order-column>
+        </order>
+		<finder name="UserIdAndGroupId" return-type="Collection">
+			<finder-column name="userId" />
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+	<entity name="DoctorSchedule" local-service="true" remote-service="true">
+
+		<column name="scheduleId" type="long" primary="true" />
+		<column name="doctorId" type="long" />
+
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<column name="dayOfWeek" type="int" />
+		<column name="startTime" type="double"/>
+		<column name="endTime" type="double"/>
+		
+		<!-- Finder methods -->
+		<finder name="DoctorId" return-type="Collection">
+			<finder-column name="doctorId" />
+		</finder>
+		<finder name="DayOfWeek" return-type="Collection">
+			<finder-column name="dayOfWeek" />
+		</finder>
+		<finder name="DoctorIdAndDayOfWeek" return-type="Collection">
+			<finder-column name="doctorId" />
+			<finder-column name="dayOfWeek" />
+		</finder>
+	</entity>
+</service-builder>

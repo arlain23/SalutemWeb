@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="salutem.visit.model.impl.ClassificationModelImpl">
+		<attributes>
+			<id name="classificationId" />
+			<basic name="patientId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="salutem.visit.model.impl.ClassificationSimilarityModelImpl">
+		<attributes>
+			<id name="similarityId" />
+			<basic name="classificationId" />
+			<basic name="patientId" />
+			<basic name="similarity" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="salutem.visit.model.impl.LocationModelImpl">
+		<attributes>
+			<id name="locationId" />
+			<basic name="patientId" />
+			<basic name="day" />
+			<basic name="month" />
+			<basic name="year" />
+			<basic name="lat" />
+			<basic name="lon" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="salutem.visit.model.impl.RegressionModelImpl">
+		<attributes>
+			<id name="regressionId" />
+			<basic name="patientId" />
+			<basic name="doctorId" />
+			<basic name="minimumList" />
+			<basic name="maximumList" />
+			<basic name="chosenK" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="salutem.visit.model.impl.TimeModelImpl">
+		<attributes>
+			<id name="timeId" />
+			<basic name="entryUuid" />
+			<basic name="groupId" />
+			<basic name="doctorId" />
+			<basic name="patientId" />
+			<basic name="visitDay" />
+			<basic name="visitMonth" />
+			<basic name="visitYear" />
+			<basic name="visitTime" />
+			<basic name="visitDuration" />
+			<basic name="wasFinished" />
+			<basic name="wasPlanned" />
+			<basic name="visitId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="salutem.visit.model.impl.VisitModelImpl">
+		<attributes>
+			<id name="visitId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="doctorId" />
+			<basic name="patientId" />
+			<basic name="cancelled" />
+			<basic name="hasHappened" />
+			<basic name="visitDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="startTimeMinutes" />
+			<basic name="duration" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="salutem.visit.model.impl.WeightMapModelImpl">
+		<attributes>
+			<id name="weightMapId" />
+			<basic name="regressionId" />
+			<basic name="key">
+				<column name="KEY_" />
+			</basic>
+			<basic name="value" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="salutem.visit.model.impl.ClassificationImpl" name="Classification">
+		<table name="visit_Classification" />
+		<attributes />
+	</entity>
+	<entity class="salutem.visit.model.impl.ClassificationSimilarityImpl" name="ClassificationSimilarity">
+		<table name="visit_ClassificationSimilarity" />
+		<attributes />
+	</entity>
+	<entity class="salutem.visit.model.impl.LocationImpl" name="Location">
+		<table name="visit_Location" />
+		<attributes />
+	</entity>
+	<entity class="salutem.visit.model.impl.RegressionImpl" name="Regression">
+		<table name="visit_Regression" />
+		<attributes />
+	</entity>
+	<entity class="salutem.visit.model.impl.TimeImpl" name="Time">
+		<table name="visit_Time" />
+		<attributes />
+	</entity>
+	<entity class="salutem.visit.model.impl.VisitImpl" name="Visit">
+		<table name="visit_Visit" />
+		<attributes />
+	</entity>
+	<entity class="salutem.visit.model.impl.WeightMapImpl" name="WeightMap">
+		<table name="visit_WeightMap" />
+		<attributes />
+	</entity>
+</entity-mappings>

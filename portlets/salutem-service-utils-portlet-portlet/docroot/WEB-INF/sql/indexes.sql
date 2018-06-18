@@ -1,0 +1,1 @@
+create index IX_55CF14DC on salutem_Test (username);

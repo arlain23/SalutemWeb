@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="salutem.visit.service.ClassificationLocalService" class="salutem.visit.service.impl.ClassificationLocalServiceImpl" />
+	<bean id="salutem.visit.service.ClassificationService" class="salutem.visit.service.impl.ClassificationServiceImpl" />
+	<bean id="salutem.visit.service.persistence.ClassificationPersistence" class="salutem.visit.service.persistence.ClassificationPersistenceImpl" parent="basePersistence" />
+	<bean id="salutem.visit.service.ClassificationSimilarityLocalService" class="salutem.visit.service.impl.ClassificationSimilarityLocalServiceImpl" />
+	<bean id="salutem.visit.service.ClassificationSimilarityService" class="salutem.visit.service.impl.ClassificationSimilarityServiceImpl" />
+	<bean id="salutem.visit.service.persistence.ClassificationSimilarityPersistence" class="salutem.visit.service.persistence.ClassificationSimilarityPersistenceImpl" parent="basePersistence" />
+	<bean id="salutem.visit.service.LocationLocalService" class="salutem.visit.service.impl.LocationLocalServiceImpl" />
+	<bean id="salutem.visit.service.LocationService" class="salutem.visit.service.impl.LocationServiceImpl" />
+	<bean id="salutem.visit.service.persistence.LocationPersistence" class="salutem.visit.service.persistence.LocationPersistenceImpl" parent="basePersistence" />
+	<bean id="salutem.visit.service.RegressionLocalService" class="salutem.visit.service.impl.RegressionLocalServiceImpl" />
+	<bean id="salutem.visit.service.RegressionService" class="salutem.visit.service.impl.RegressionServiceImpl" />
+	<bean id="salutem.visit.service.persistence.RegressionPersistence" class="salutem.visit.service.persistence.RegressionPersistenceImpl" parent="basePersistence" />
+	<bean id="salutem.visit.service.TimeLocalService" class="salutem.visit.service.impl.TimeLocalServiceImpl" />
+	<bean id="salutem.visit.service.TimeService" class="salutem.visit.service.impl.TimeServiceImpl" />
+	<bean id="salutem.visit.service.persistence.TimePersistence" class="salutem.visit.service.persistence.TimePersistenceImpl" parent="basePersistence" />
+	<bean id="salutem.visit.service.VisitLocalService" class="salutem.visit.service.impl.VisitLocalServiceImpl" />
+	<bean id="salutem.visit.service.VisitService" class="salutem.visit.service.impl.VisitServiceImpl" />
+	<bean id="salutem.visit.service.persistence.VisitPersistence" class="salutem.visit.service.persistence.VisitPersistenceImpl" parent="basePersistence" />
+	<bean id="salutem.visit.service.WeightMapLocalService" class="salutem.visit.service.impl.WeightMapLocalServiceImpl" />
+	<bean id="salutem.visit.service.WeightMapService" class="salutem.visit.service.impl.WeightMapServiceImpl" />
+	<bean id="salutem.visit.service.persistence.WeightMapPersistence" class="salutem.visit.service.persistence.WeightMapPersistenceImpl" parent="basePersistence" />
+</beans>

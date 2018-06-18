@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="tul.salutem.model.Test">
+		<field name="testId" type="long" />
+		<field name="username" type="String" />
+		<field name="createDate" type="Date" />
+	</model>
+</model-hints>

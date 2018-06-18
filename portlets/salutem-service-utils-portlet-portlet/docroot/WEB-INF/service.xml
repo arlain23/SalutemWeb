@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="tul.salutem">
+	<author>Aneta Andrzejewska</author>
+	<namespace>salutem</namespace>
+
+	<entity name="Test" local-service="true" remote-service="true">
+		<column name="testId" type="long" primary="true" ></column>
+		<column name="username" type="String" ></column>
+		<column name="createDate" type="Date" ></column>
+		
+        <finder name="username" return-type="Collection">
+            <finder-column name="username"></finder-column>
+        </finder>
+		
+	</entity>
+</service-builder>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="salutem.visit">
+	<author>Aneta Andrzejewska</author>
+	<namespace>visit</namespace>
+
+	<entity name="Visit" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="visitId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="doctorId" type="long" />
+		<column name="patientId" type="long" />
+		<column name="cancelled" type="boolean" />
+		<column name="hasHappened" type="boolean" />
+		<column name="visitDate" type="Date" />
+		<column name="startTimeMinutes" type="int" />
+		<column name="duration" type="int" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="startTimeMinutes" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="DoctorIdAndVisitDate" return-type="Collection">
+			<finder-column name="doctorId" />
+			<finder-column name="visitDate" />
+		</finder>
+	</entity>
+	
+	<entity name="Time" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="timeId" type="long" primary="true" />
+		<column name="entryUuid" type="String" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Other fields -->
+
+		<column name="doctorId" type="long" />
+		<column name="patientId" type="long" />
+		<column name="visitDay" type="int"/>
+		<column name="visitMonth" type="int"/>
+		<column name="visitYear" type="int"/>
+		<column name="visitTime" type="int"/>
+		<column name="visitDuration" type="int"/>
+		<column name="wasFinished" type="boolean"/>
+		
+		<column name="wasPlanned" type="boolean" />
+		<column name="visitId" type="long" />
+		
+		<finder name="UUID" return-type="Collection">
+			<finder-column name="entryUuid" />
+		</finder>
+		<finder name="VisitId" return-type="Collection">
+			<finder-column name="visitId" />
+		</finder>
+		
+		<finder name="PatientId" return-type="Collection">
+			<finder-column name="patientId" />
+		</finder>
+		
+		<finder name="DoctorIdAndPatientId" return-type="Collection">
+			<finder-column name="doctorId" />
+			<finder-column name="patientId" />
+		</finder>
+		
+		<finder name="DoctorIdAndWasFinished" return-type="Collection">
+			<finder-column name="doctorId" />
+			<finder-column name="wasFinished" />
+		</finder>
+		
+		<finder name="DoctorIdAndDayMonthAndYear" return-type="Collection">
+			<finder-column name="doctorId" />
+			<finder-column name="visitDay" />
+			<finder-column name="visitMonth" />
+			<finder-column name="visitYear" />
+		</finder>
+	
+		<finder name="DoctorIdAndPatientIdAndDayMonthAndYear" return-type="Collection">
+			<finder-column name="doctorId" />
+			<finder-column name="patientId" />
+			<finder-column name="visitDay" />
+			<finder-column name="visitMonth" />
+			<finder-column name="visitYear" />
+		</finder>
+		
+	</entity>
+	
+	<entity name="Location" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="locationId" type="long" primary="true" />
+		<column name="patientId" type="long" />
+
+		<!-- Other fields -->
+
+		<column name="day" type="int" />
+		<column name="month" type="int" />
+		<column name="year" type="int"/>
+		<column name="lat" type="double"/>
+		<column name="lon" type="double"/>
+
+		<finder name="PatientId" return-type="Collection">
+			<finder-column name="patientId" />
+		</finder>
+		
+		<finder name="PatientIdAndYear" return-type="Collection">
+			<finder-column name="patientId" />
+			<finder-column name="year" />
+		</finder>
+		
+		<finder name="PatientIdAndYearAndMonth" return-type="Collection">
+			<finder-column name="patientId" />
+			<finder-column name="year" />
+			<finder-column name="month" />
+		</finder>
+		
+		<finder name="PatientIdAndYearAndMonthAndDay" return-type="Collection">
+			<finder-column name="patientId" />
+			<finder-column name="year" />
+			<finder-column name="month" />
+			<finder-column name="day" />
+		</finder>
+		
+		<finder name="PatientIdAndYearAndMonthAndDayAndLatAndLon" return-type="Collection">
+			<finder-column name="patientId" />
+			<finder-column name="year" />
+			<finder-column name="month" />
+			<finder-column name="day" />
+			<finder-column name="lat" />
+			<finder-column name="lon" />
+		</finder>
+		
+	</entity>
+	
+	<entity name="Classification" local-service="true" >
+
+		<!-- PK fields -->
+
+		<column name="classificationId" type="long" primary="true" />
+		<column name="patientId" type="long" />
+		
+		<finder name="PatientId" return-type="Collection">
+			<finder-column name="patientId" />
+		</finder>
+
+	</entity>
+	
+		<entity name="ClassificationSimilarity" local-service="true" >
+
+		<!-- PK fields -->
+
+		<column name="similarityId" type="long" primary="true" />
+		<column name="classificationId" type="long" />
+		<column name="patientId" type="long" />
+		<column name="similarity" type="double" />
+		
+		
+		<finder name="ClassificationId" return-type="Collection">
+			<finder-column name="classificationId" />
+		</finder>
+	</entity>
+	
+	<entity name="Regression" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="regressionId" type="long" primary="true" />
+		<column name="patientId" type="long" />
+		<column name="doctorId" type="long" />
+
+		<column name="minimumList" type="String" />
+		<column name="maximumList" type="String" />
+		<column name="chosenK" type="int" />
+		
+		<finder name="PatientIdAndDoctorId" return-type="Collection">
+			<finder-column name="patientId" />
+			<finder-column name="doctorId" />
+		</finder>
+
+	</entity>
+	<entity name="WeightMap" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="weightMapId" type="long" primary="true" />
+		<column name="regressionId" type="long" />
+		<column name="key" type="String" />
+		<column name="value" type="double" />
+
+		<finder name="RegressionId" return-type="Collection">
+			<finder-column name="regressionId" />
+		</finder>
+
+	</entity>
+	
+</service-builder>

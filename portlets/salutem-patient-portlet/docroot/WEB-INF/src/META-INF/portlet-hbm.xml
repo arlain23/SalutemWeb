@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="salutem.patient.model.Patient" />
+	<class name="salutem.patient.model.impl.PatientImpl" table="patient_Patient">
+		<cache usage="read-write" />
+		<id name="patientId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="confirmingUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="confirmingUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isConfirmed" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="surname" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="middleName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="pesel" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="idNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="idImageFileEntryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="birthDate" type="org.hibernate.type.TimestampType" />
+		<property name="sex" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cityName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

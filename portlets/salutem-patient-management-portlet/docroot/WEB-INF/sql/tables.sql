@@ -1,0 +1,23 @@
+create table salutem_Patient (
+	patientId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	confirmingUserId LONG,
+	confirmingUserName VARCHAR(75) null,
+	isConfirmed BOOLEAN,
+	name VARCHAR(75) null,
+	surname VARCHAR(75) null,
+	middleName VARCHAR(75) null,
+	pesel INTEGER,
+	idNumber VARCHAR(75) null,
+	idImage VARCHAR(75) null,
+	birthDate DATE null,
+	sex VARCHAR(75) null,
+	address VARCHAR(75) null,
+	cityName VARCHAR(75) null,
+	bloodType VARCHAR(75) null
+);

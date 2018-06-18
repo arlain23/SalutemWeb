@@ -1,0 +1,7 @@
+<div class="footer-header">
+<ul>
+#foreach ($nav_item in $nav_items)
+	<li class="section-title">
+		<a href="$nav_item.getURL()"><span>$nav_item.getName()</span></a>
+	</li>
+#end

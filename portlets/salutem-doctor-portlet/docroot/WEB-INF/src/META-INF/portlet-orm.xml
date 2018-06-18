@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="salutem.doctor.model.impl.DoctorModelImpl">
+		<attributes>
+			<id name="doctorId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="name" />
+			<basic name="surname" />
+			<basic name="imageId" />
+			<basic name="middleName" />
+			<basic name="specialization" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="salutem.doctor.model.impl.DoctorScheduleModelImpl">
+		<attributes>
+			<id name="scheduleId" />
+			<basic name="doctorId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dayOfWeek" />
+			<basic name="startTime" />
+			<basic name="endTime" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="salutem.doctor.model.impl.DoctorImpl" name="Doctor">
+		<table name="doctor_Doctor" />
+		<attributes />
+	</entity>
+	<entity class="salutem.doctor.model.impl.DoctorScheduleImpl" name="DoctorSchedule">
+		<table name="doctor_DoctorSchedule" />
+		<attributes />
+	</entity>
+</entity-mappings>

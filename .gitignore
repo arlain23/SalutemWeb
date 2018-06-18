@@ -1,0 +1,45 @@
+.metadata/*
+/RemoteSystemsTempFiles/*
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/portlets/*/docroot/WEB-INF/classes/*
+/portlets/*/docroot/WEB-INF/src/salutem/*/service/base/*
+/portlets/*/docroot/WEB-INF/src/salutem/*/service/http/*
+/portlets/*/docroot/WEB-INF/src/salutem/*/service/persistence/*
+/portlets/*/docroot/WEB-INF/src/salutem/*/model/*
+/servers/*
+/webs/*
+/shared/*
+/tools/*
+/vim.exe*
+/.project
+/.ivy/*
+/misc/*
+/ivy*
+/source-formatter*
+/ext/*
+/dependencies/*
+/build.anean*
+/apps/*
+/ci.prop*

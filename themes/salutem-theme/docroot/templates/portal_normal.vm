@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class salutem">
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+
+#set ($mainPageURL = $theme_display.getPortalURL())	
+							
+<div class="header-wrapper ">
+	<div class="container">
+		<header id="banner" role="banner">
+			<div class="header-main">
+				<div class="row header-first-row">
+					<div class="col-md-3 col-sm-4 col-xs-4 main-image-wrapper">
+						#set ($mainImageURL = "$images_folder/logo.png")
+						<a href="$mainPageURL"><img class="img-responsive" src="$mainImageURL" alt="salutem"/></a>
+					</div>
+					<div class="subtitle-wrapper col-md-6 col-sm-8 col-xs-8">
+						<div class="subtitle">
+							<a href="$mainPageURL">#language ("salutem-slogan")</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12 col-xs-12 search-wrapper ">
+						<!--<div id="display-controls" class="display-controls">
+							<a title='#language ("large-font")' href="#" id="font-size-large" class="control-button">A</a>
+							<a title='#language ("normal-font")' href="#" id="font-size-regular" class="control-button">A</a>
+							<a title='#language ("small-font")' href="#" id="font-size-small" class="control-button">A</a>
+							<span class="control-button">
+								<a title=#language ("toggle-contrast")' href="#" id="toggle-contrast"><i class="icon-adjust"></i></a>
+							</span>
+						</div>	 -->
+						<div class="search-box">
+							<form action="/wyszukiwarka" method="get">
+								<input type="hidden" name="p_p_id" value="3" />
+							    <span class="search-icon">&nbsp;</span>
+								<input id="search" name="3_searchfield" type="text"/>
+								<input type="hidden" name="3_contentType" value="articles" />
+							</form>
+						</div>	
+					</div>
+				</div>				
+			</div>
+		</header>
+	</div>
+</div>
+<div class="navigation-wrapper container-fluid hidden-mobile">
+	#if ($has_navigation)
+		#parse ("$full_templates_path/navigation.vm")
+	#end
+</div>
+<div class="content-wrapper container">
+	<div id="content">
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+</div>
+<div class="footer-wrapper">
+	<div class="container">
+		<footer id="footer" class="main-footer" role="contentinfo">
+		    <div class="sitemap">
+		        #if ($has_navigation)
+		            #parse ("$full_templates_path/sitemap.vm")
+		        #end
+		    </div>	 	
+			<div class="row display-flex">
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					
+				</div>
+				<div class="uni-logo-wrapper col-md-6 col-sm-6 col-xs-6">
+					<div class="ife-logo">
+						<a href="https://www.ife.p.lodz.pl/en">
+							<img class="logo-img img-responsive" src="$images_folder/logo_ife.png" alt="IFE"/>
+						</a>
+					</div>
+					<div class="tul-logo">
+						<a href="https://www.p.lodz.pl/en">
+							<img class="logo-img img-responsive" src="$images_folder/logo_tul.png" alt="TUL"/>
+						</a>
+					</div>
+				</div>
+			</div>    
+		</footer>
+	</div>
+</div>
+
+<script src="$javascript_folder/scripts.js"></script>
+	
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

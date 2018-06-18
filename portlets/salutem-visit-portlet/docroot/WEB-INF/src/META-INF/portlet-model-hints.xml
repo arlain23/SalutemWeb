@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="salutem.visit.model.Classification">
+		<field name="classificationId" type="long" />
+		<field name="patientId" type="long" />
+	</model>
+	<model name="salutem.visit.model.ClassificationSimilarity">
+		<field name="similarityId" type="long" />
+		<field name="classificationId" type="long" />
+		<field name="patientId" type="long" />
+		<field name="similarity" type="double" />
+	</model>
+	<model name="salutem.visit.model.Location">
+		<field name="locationId" type="long" />
+		<field name="patientId" type="long" />
+		<field name="day" type="int" />
+		<field name="month" type="int" />
+		<field name="year" type="int" />
+		<field name="lat" type="double" />
+		<field name="lon" type="double" />
+	</model>
+	<model name="salutem.visit.model.Regression">
+		<field name="regressionId" type="long" />
+		<field name="patientId" type="long" />
+		<field name="doctorId" type="long" />
+		<field name="minimumList" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="maximumList" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="chosenK" type="int" />
+	</model>
+	<model name="salutem.visit.model.Time">
+		<field name="timeId" type="long" />
+		<field name="entryUuid" type="String" />
+		<field name="groupId" type="long" />
+		<field name="doctorId" type="long" />
+		<field name="patientId" type="long" />
+		<field name="visitDay" type="int" />
+		<field name="visitMonth" type="int" />
+		<field name="visitYear" type="int" />
+		<field name="visitTime" type="int" />
+		<field name="visitDuration" type="int" />
+		<field name="wasFinished" type="boolean" />
+		<field name="wasPlanned" type="boolean" />
+		<field name="visitId" type="long" />
+	</model>
+	<model name="salutem.visit.model.Visit">
+		<field name="visitId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="doctorId" type="long" />
+		<field name="patientId" type="long" />
+		<field name="cancelled" type="boolean" />
+		<field name="hasHappened" type="boolean" />
+		<field name="visitDate" type="Date" />
+		<field name="startTimeMinutes" type="int" />
+		<field name="duration" type="int" />
+	</model>
+	<model name="salutem.visit.model.WeightMap">
+		<field name="weightMapId" type="long" />
+		<field name="regressionId" type="long" />
+		<field name="key" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="value" type="double">
+			<hint name="max-length">2000</hint>
+		</field>
+	</model>
+</model-hints>

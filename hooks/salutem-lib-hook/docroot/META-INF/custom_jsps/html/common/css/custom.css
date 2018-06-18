@@ -1,0 +1,15 @@
+.admin-col-md-8 {
+	width: 66%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.admin-col-md-4 {
+	width: 33%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.admin-row {
+	
+}

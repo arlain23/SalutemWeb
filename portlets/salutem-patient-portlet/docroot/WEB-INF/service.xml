@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="salutem.patient">
+	<author>Aneta Andrzejewska</author>
+	<namespace>patient</namespace>
+
+	<entity name="Patient" local-service="true" remote-service="true">
+
+		<column name="patientId" type="long" primary="true" />
+		<column name="groupId" type="long" />
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="confirmingUserId" type="long" />
+		<column name="confirmingUserName" type="String" />
+		<column name="isConfirmed" type="boolean" />
+
+		<column name="name" type="String" />
+		<column name="surname" type="String" />
+		<column name="middleName" type="String" />
+		<column name="pesel" type="String" />
+		<column name="idNumber" type="String" />
+		<column name="idImageFileEntryId" type="long" />
+		<column name="birthDate" type="Date" />
+		<column name="sex" type="String" />
+		<column name="address" type="String" />
+		<column name="cityName" type="String" />
+
+		<!-- Finder methods -->
+        <order by="asc">
+            <order-column name="surname" case-sensitive="false"></order-column>
+        </order>
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="PESEL" return-type="Collection">
+			<finder-column name="pesel" />
+		</finder>
+		<finder name="FullName" return-type="Collection">
+			<finder-column name="name" />
+			<finder-column name="middleName" />
+			<finder-column name="surname" />
+		</finder>
+		<finder name="GroupIdAndConfirmed" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="isConfirmed" />
+		</finder>
+	</entity>
+</service-builder>

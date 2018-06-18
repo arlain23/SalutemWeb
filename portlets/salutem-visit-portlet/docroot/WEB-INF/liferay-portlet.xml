@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
+
+<liferay-portlet-app>
+	<portlet>
+		<portlet-name>salutem-visit-scheduler</portlet-name>
+		<icon>/icon.png</icon>
+		<scheduler-entry>
+		  <scheduler-description>Regression scheduler</scheduler-description>
+		  <scheduler-event-listener-class>salutem.ai.RegressionScheduler</scheduler-event-listener-class>
+		  <trigger>
+	        <cron>
+				<cron-trigger-value>30 1 * * 0 ?</cron-trigger-value> 
+		 	</cron>  
+		 </trigger>
+		</scheduler-entry>
+		<scheduler-entry>
+		  <scheduler-description>Classification scheduler</scheduler-description>
+		  <scheduler-event-listener-class>salutem.ai.ClassificationScheduler</scheduler-event-listener-class>
+		  <trigger>
+	        <cron>
+				<cron-trigger-value>30 1 * * 0 ?</cron-trigger-value> 
+		 	</cron>  
+		 </trigger>
+		</scheduler-entry>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+		<css-class-wrapper>salutem-visit-scheduler-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>salutem-visit</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/daterangepicker.css</header-portlet-css>
+		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/moment.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/daterangepicker.js</footer-portlet-javascript>
+		<css-class-wrapper>salutem-visit-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>salutem-visit-patient</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+		<css-class-wrapper>salutem-visit-portlet-patient</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>salutem-visit-doctor</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+		<css-class-wrapper>salutem-visit-portlet-doctor</css-class-wrapper>
+	</portlet>
+	
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+</liferay-portlet-app>

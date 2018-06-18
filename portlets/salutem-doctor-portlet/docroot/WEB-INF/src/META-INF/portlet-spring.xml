@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="salutem.doctor.service.DoctorLocalService" class="salutem.doctor.service.impl.DoctorLocalServiceImpl" />
+	<bean id="salutem.doctor.service.DoctorService" class="salutem.doctor.service.impl.DoctorServiceImpl" />
+	<bean id="salutem.doctor.service.persistence.DoctorPersistence" class="salutem.doctor.service.persistence.DoctorPersistenceImpl" parent="basePersistence" />
+	<bean id="salutem.doctor.service.DoctorScheduleLocalService" class="salutem.doctor.service.impl.DoctorScheduleLocalServiceImpl" />
+	<bean id="salutem.doctor.service.DoctorScheduleService" class="salutem.doctor.service.impl.DoctorScheduleServiceImpl" />
+	<bean id="salutem.doctor.service.persistence.DoctorSchedulePersistence" class="salutem.doctor.service.persistence.DoctorSchedulePersistenceImpl" parent="basePersistence" />
+</beans>

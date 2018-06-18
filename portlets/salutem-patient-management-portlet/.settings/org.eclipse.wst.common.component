@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="salutem-patient-management-portlet">
+        <wb-resource deploy-path="/" source-path="/docroot" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/docroot/WEB-INF/src"/>
+        <dependent-module archiveName="salutem-custom-entity-hook-service.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/salutem-custom-entity-hook/docroot/WEB-INF/lib/salutem-custom-entity-hook-service.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="salutem-patient-management-portlet"/>
+        <property name="java-output-path" value="/salutem-patient-management-portlet/docroot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	<portlet>
+		<portlet-name>salutem-visit-scheduler</portlet-name>
+		<display-name>Salutem Visit Scheduler</display-name>
+		<portlet-class>salutem.ai.VisitDurationActions</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/ai/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Salutem Visit Scheduler</title>
+			<short-title>Salutem Visit Scheduler</short-title>
+			<keywords>Salutem Visit Scheduler</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>salutem-visit</portlet-name>
+		<display-name>Salutem Visit</display-name>
+		<portlet-class>salutem.visit.portlet.VisitActions</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/basic/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Salutem Visit</title>
+			<short-title>Salutem Visit</short-title>
+			<keywords>Salutem Visit</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>salutem-visit-patient</portlet-name>
+		<display-name>Salutem Visit Patient</display-name>
+		<portlet-class>salutem.visit.portlet.VisitActions</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/visit/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Salutem Visit Patient</title>
+			<short-title>Salutem Visit Patient</short-title>
+			<keywords>Salutem Visit Patient</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>salutem-visit-doctor</portlet-name>
+		<display-name>Salutem Visit Doctor</display-name>
+		<portlet-class>salutem.visit.portlet.VisitActions</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/doctor/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<portlet-info>
+			<title>Salutem Visit Doctor</title>
+			<short-title>Salutem Visit Doctor</short-title>
+			<keywords>Salutem Visit Doctor</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+</portlet-app>

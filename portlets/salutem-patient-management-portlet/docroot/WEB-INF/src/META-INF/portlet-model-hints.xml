@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="tul.salutem.entity.model.Patient">
+		<field name="patientId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="confirmingUserId" type="long" />
+		<field name="confirmingUserName" type="String" />
+		<field name="isConfirmed" type="boolean" />
+		<field name="name" type="String" />
+		<field name="surname" type="String" />
+		<field name="middleName" type="String" />
+		<field name="pesel" type="int" />
+		<field name="idNumber" type="String" />
+		<field name="idImage" type="String" />
+		<field name="birthDate" type="Date" />
+		<field name="sex" type="String" />
+		<field name="address" type="String" />
+		<field name="cityName" type="String" />
+		<field name="bloodType" type="String" />
+	</model>
+</model-hints>

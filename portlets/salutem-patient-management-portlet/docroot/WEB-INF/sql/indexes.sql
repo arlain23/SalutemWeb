@@ -1,0 +1,1 @@
+create index IX_CE8A254B on salutem_Patient (userId);

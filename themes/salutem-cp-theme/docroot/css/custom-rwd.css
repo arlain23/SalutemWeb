@@ -1,0 +1,46 @@
+@import "compass";
+@import "mixins";
+
+.aui {
+	@include respond-to(phone, tablet) {
+	}
+}
+
+/*extra small devices */
+@media screen and (max-width:300px) {
+	
+}
+@media screen and (max-width:400px) {
+
+}
+/* small devices */
+@media screen and (max-width:600px) {
+	.aui {
+	}
+}
+/* tablet view */
+@media screen and (min-width: 601px) and (max-width:1200px) {
+	
+	.aui  {
+
+	}
+}
+@media screen and (max-width: 767px) {
+	.aui {
+
+	}
+}
+
+
+@media screen and (min-width: 767px) and (max-width:980px) {
+	.aui {
+		
+	}
+}
+@media screen and (min-width: 980px) and (max-width:992px) {
+	.aui {
+		
+	}
+	
+}
+

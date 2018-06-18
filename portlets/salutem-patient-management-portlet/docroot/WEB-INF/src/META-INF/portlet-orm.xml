@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="tul.salutem.entity.model.impl.PatientModelImpl">
+		<attributes>
+			<id name="patientId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="confirmingUserId" />
+			<basic name="confirmingUserName" />
+			<basic name="isConfirmed" />
+			<basic name="name" />
+			<basic name="surname" />
+			<basic name="middleName" />
+			<basic name="pesel" />
+			<basic name="idNumber" />
+			<basic name="idImage" />
+			<basic name="birthDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="sex" />
+			<basic name="address" />
+			<basic name="cityName" />
+			<basic name="bloodType" />
+			<transient name="confirmingUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="tul.salutem.entity.model.impl.PatientImpl" name="Patient">
+		<table name="salutem_Patient" />
+		<attributes />
+	</entity>
+</entity-mappings>
