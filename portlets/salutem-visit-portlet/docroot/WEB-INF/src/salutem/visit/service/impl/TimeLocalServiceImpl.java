@@ -84,6 +84,9 @@ public class TimeLocalServiceImpl extends TimeLocalServiceBaseImpl {
 		calendar.set(Calendar.DAY_OF_MONTH, visitDay);
 		calendar.set(Calendar.MONTH, visitMonth);
 		calendar.set(Calendar.YEAR, visitYear);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.HOUR, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
 		
 		List<Visit> visits = VisitLocalServiceUtil.getVisitsByDoctrIdAndDate(calendar.getTime(), doctorId);
 		if (visits.size() == 0) return result;

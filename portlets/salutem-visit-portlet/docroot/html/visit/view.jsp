@@ -21,6 +21,7 @@
 <%
 	long userID = themeDisplay.getUserId();
 	long patientId = VisitLocalServiceUtil.getPatientId(userID);
+	patientId = 500;
 	Date now = new Date();
 	List<Visit> todayVisits = VisitLocalServiceUtil.getVisitsPatientIdAndDate(now, patientId);
 	

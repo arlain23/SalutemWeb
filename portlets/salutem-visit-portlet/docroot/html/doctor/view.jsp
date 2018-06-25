@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.text.DateFormat"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.liferay.portal.util.PortalUtil"%>
@@ -28,13 +29,12 @@
 	long userID = themeDisplay.getUserId();
 	long groupId = themeDisplay.getScopeGroupId();	
 	Doctor doctor = DoctorLocalServiceUtil.getDoctorByUserID(userID, themeDisplay.getScopeGroupId());
-	long doctorId = doctor.getDoctorId();
 	boolean isDoctor = doctor != null;
+	long doctorId = doctor.getDoctorId();
 	Date now = new Date();
-	List<Visit> todayVisits = null;
+	List<Visit> todayVisits = new ArrayList<Visit>();
 	Time currentVisitTime = null;
-	
-	String name = "";
+	String name = "";	
 	String surname = "";
 	String middleName = "";
 	String pesel = "";
@@ -50,30 +50,32 @@
 	if (isDoctor) {
 		todayVisits = VisitLocalServiceUtil.getVisitsByDoctrIdAndDate(now, doctorId);
 		currentVisitTime = TimeLocalServiceUtil.getFinishedByDoctorId(doctorId);
-		Patient currentPatient = PatientLocalServiceUtil.getPatient(currentVisitTime.getPatientId());
-		currentPatientId = currentPatient.getPatientId();
-		name = currentPatient.getName();
-		surname = currentPatient.getSurname();
-		pesel = String.valueOf(currentPatient.getPesel());
-		idNumber = currentPatient.getIdNumber();
-		if (currentPatient.getIdImageFileEntryId() != 0) {
-			DLFileEntry idImageFileEntry = DLFileEntryLocalServiceUtil.getFileEntry(
-					currentPatient.getIdImageFileEntryId());
-			// 	http://localhost:8080/documents/groupId/folderId/title/uuid?t=new Date
-			String url = PortalUtil.getPortalURL(request) + "/";
-			url += "documents/";
-			url += groupId + "/";
-			url += idImageFileEntry.getFolderId() + "/";
-			url += idImageFileEntry.getName() + "/";
-			url += idImageFileEntry.getUuid();
-			url += "?t=" + System.currentTimeMillis();
-			idThumbnail = url;
+		if (currentVisitTime != null) {
+			Patient currentPatient = PatientLocalServiceUtil.getPatient(currentVisitTime.getPatientId());
+			currentPatientId = currentPatient.getPatientId();
+			name = currentPatient.getName();
+			surname = currentPatient.getSurname();
+			pesel = String.valueOf(currentPatient.getPesel());
+			idNumber = currentPatient.getIdNumber();
+			if (currentPatient.getIdImageFileEntryId() != 0) {
+				DLFileEntry idImageFileEntry = DLFileEntryLocalServiceUtil.getFileEntry(
+						currentPatient.getIdImageFileEntryId());
+				// 	http://localhost:8080/documents/groupId/folderId/title/uuid?t=new Date
+				String url = PortalUtil.getPortalURL(request) + "/";
+				url += "documents/";
+				url += groupId + "/";
+				url += idImageFileEntry.getFolderId() + "/";
+				url += idImageFileEntry.getName() + "/";
+				url += idImageFileEntry.getUuid();
+				url += "?t=" + System.currentTimeMillis();
+				idThumbnail = url;
+			}
+			birthDate = currentPatient.getBirthDate();
+			sex = currentPatient.getSex();
+			address = currentPatient.getAddress();
+			cityName = currentPatient.getCityName();
+			bd = dateFormat.format(birthDate);
 		}
-		birthDate = currentPatient.getBirthDate();
-		sex = currentPatient.getSex();
-		address = currentPatient.getAddress();
-		cityName = currentPatient.getCityName();
-		bd = dateFormat.format(birthDate);
 	}
 	
 %>
